@@ -25,15 +25,20 @@ namespace InterviewQuestions
             //Max and index
             int max = 0;
             int maxIndex = 0;
-            for (int i = 0; i< prices.Length; i++)
+            for (int i = 0; i < prices.Length; i++)
             {
                 if (prices[i] > max)
                 {
                     max = prices[i];
                     maxIndex = i;
                 }
+
+            }
+            for (int i = 0; i<prices.Length; i++ )
+            { 
                 if (i == 0)
                     minLocal = prices[i];
+                else if (prices[i] < minLocal && i < maxIndex)
             }
         }
     }
