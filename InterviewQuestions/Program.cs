@@ -28,8 +28,12 @@ namespace InterviewQuestions
             for (int i = 0; i< prices.Length; i++)
             {
                 if (prices[i] > max)
+                {
                     max = prices[i];
-                if price
+                    maxIndex = i;
+                }
+                if (i == 0)
+                    minLocal = prices[i];
             }
         }
     }
