@@ -12,13 +12,13 @@ namespace InterviewQuestions
 
             int[] prices = { 15, 20, 21, 35, 5, 34 };
 
-            Console.WriteLine(GetMaxProfitBroken(prices));
+            Console.WriteLine(GetMaxProfitBrute(prices));
 
 
 
         }
 
-        public static int GetMaxProfitBroken(int[] prices)
+        public static int GetMaxProfitBrute(int[] prices)
         {
             //return this
             int maxProfit = 0;
@@ -30,22 +30,18 @@ namespace InterviewQuestions
             int maxIndex = 0;
             for (int i = 0; i < prices.Length; i++)
             {
-                if (prices[i] > max)
+                for (int j = 0; j < prices.Length; j++)
                 {
-                    max = prices[i];
-                    maxIndex = i;
+                    if (j > i)
+                    {
+                        if ((prices[j] - prices[i]) > maxProfit)
+                            maxProfit = prices[j] - prices[i];
+                    }
                 }
-
             }
-            for (int i = 0; i<prices.Length; i++ )
-            {
-                if (i == 0)
-                    minLocal = prices[i];
-                else if (prices[i] < minLocal && i < maxIndex)
-                    minLocal = prices[i];
-            }
-            maxProfit = max - minLocal;
             return maxProfit;
         }
+
+
     }
 }
