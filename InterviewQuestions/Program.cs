@@ -14,7 +14,7 @@ namespace InterviewQuestions
 
             Console.WriteLine(GetMaxProfitBrute(prices));
 
-
+            Console.WriteLine(GetMaxProfitOneLoop(prices));
 
         }
 
@@ -46,8 +46,10 @@ namespace InterviewQuestions
                 if (prices[i] < minPrice)
                     minPrice = prices[i];
 
-                if ((prices[i] - minPrice) > maxProfit)
-                    maxProfit = (prices[i] - minPrice);
+                int potentialProfit = prices[i] - minPrice;
+
+                if (potentialProfit > maxProfit)
+                    maxProfit = potentialProfit;
             }
             return maxProfit;
         }
