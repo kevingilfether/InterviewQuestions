@@ -22,12 +22,6 @@ namespace InterviewQuestions
         {
             //return this
             int maxProfit = 0;
-            //This is the minimum before the maximum
-            int minLocal = 0;
-            int minIndex = 0;
-            //Max and index
-            int max = 0;
-            int maxIndex = 0;
             for (int i = 0; i < prices.Length; i++)
             {
                 for (int j = 0; j < prices.Length; j++)
@@ -42,6 +36,18 @@ namespace InterviewQuestions
             return maxProfit;
         }
 
+        public static int GetMaxProfitOneLoop(int[] prices)
+        {
+            int maxProfit = 0;
+            int minPrice = prices[0];
 
+            for (int i =0; i<prices.Length; i++)
+            {
+                if 
+            }
+
+        }
+
+    
     }
 }
