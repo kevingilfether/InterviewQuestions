@@ -43,9 +43,13 @@ namespace InterviewQuestions
 
             for (int i =0; i<prices.Length; i++)
             {
-                if 
-            }
+                if (prices[i] < minPrice)
+                    minPrice = prices[i];
 
+                if ((prices[i] - minPrice) > maxProfit)
+                    maxProfit = (prices[i] - minPrice);
+            }
+            return maxProfit;
         }
 
     
