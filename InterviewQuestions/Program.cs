@@ -29,7 +29,7 @@ namespace InterviewQuestions
 
             int indexForSortedArray = 0;
 
-            for (int score = 0; score < scoreCounts.Length; score++)
+            for (int score = scoreCounts.Length-1; score >=0; score--)
             {
                 int count = scoreCounts[score];
 
