@@ -16,14 +16,28 @@ namespace InterviewQuestions
 
         public static int[] SortScores(int[] unsortedScores, int HighestPossibleScore)
         {
-            int[] sortedScores[] = new int[unsortedScores.Length];
-            int[] scoreCounts[] = new int[HighestPossibleScore];
+            int[] sortedScores = new int[unsortedScores.Length];
+            int[] scoreCounts = new int[HighestPossibleScore + 1];
 
-            for (int score =0; score<unsortedScores.Length; score++)
+            for (int score = 0; score < unsortedScores.Length; score++)
             {
-                scoreCounts[sortedScores[score]]++;
+                scoreCounts[unsortedScores[score] + 1]++;
             }
+
+            int indexForSortedArray = 0;
+
+            for (int score = 0; score < scoreCounts.Length; score++)
+            {
+                int count = scoreCounts[score];
+
+                for (int occurence = 0; occurence < count; occurence++)
+                {
+                    sortedScores[indexForSortedArray] = score;
+                    indexForSortedArray++;
+                }
+            }
+            return sortedScores;
         }
-            
+
     }
 }
