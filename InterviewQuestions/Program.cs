@@ -17,10 +17,12 @@ namespace InterviewQuestions
         public static int[] SortScores(int[] unsortedScores, int HighestPossibleScore)
         {
             int[] sortedScores[] = new int[unsortedScores.Length];
-            int[] scoreCounts[] = new int[HighestPossibleScore - 1];
+            int[] scoreCounts[] = new int[HighestPossibleScore];
 
-            for (int score =0; score<unsortedScores.Length; int++)
-            { }
+            for (int score =0; score<unsortedScores.Length; score++)
+            {
+                scoreCounts[sortedScores[score]]++;
+            }
         }
             
     }
