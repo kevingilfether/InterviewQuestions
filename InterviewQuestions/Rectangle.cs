@@ -40,6 +40,20 @@ namespace InterviewQuestions
             int rectangle2RightX = rectangle2.LeftX + rectangle2.Width;
             int overlapBetween = 0;
 
+            int highestStartingPoint = 0;
+            int lowestEndingPoint = 0;
+
+            if (rectangle1.LeftX >= rectangle2.LeftX)
+                highestStartingPoint = rectangle1.LeftX;
+            else if (rectangle1.LeftX < rectangle2.LeftX)
+                highestStartingPoint = rectangle2.LeftX;
+
+            if (rectangle1RightX <= rectangle2RightX)
+                lowestEndingPoint = rectangle1RightX;
+            else if (rectangle1RightX > rectangle2RightX)
+                lowestEndingPoint = rectangle2RightX;
+
+
             
 
 
