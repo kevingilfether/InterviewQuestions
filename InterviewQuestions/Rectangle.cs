@@ -33,6 +33,18 @@ namespace InterviewQuestions
         //Better to see if width and height of rectangle 1 include any portion 
         // of rectangle 2
         // If they do, then proceed to check what they contain with iterative process?
+
+        public int GetXOverlap(Rectangle rectangle1, Rectangle rectangle2)
+        {
+            int rectangle1RightX = rectangle1.LeftX + rectangle1.Width;
+            int rectangle2RightX = rectangle2.LeftX + rectangle2.Width;
+            int overlapBetween = 0;
+
+            
+
+
+        }
+
         public Rectangle GetIntersection(Rectangle rectangle1, Rectangle rectangle2)
         {
 
