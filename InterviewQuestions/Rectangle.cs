@@ -38,20 +38,10 @@ namespace InterviewQuestions
         {
             int rectangle1RightX = rectangle1.LeftX + rectangle1.Width;
             int rectangle2RightX = rectangle2.LeftX + rectangle2.Width;
-            int overlapBetween = 0;
 
-            int highestStartingPoint = 0;
-            int lowestEndingPoint = 0;
+            int highestStartingPoint = Math.Max(rectangle1.LeftX, rectangle2.LeftX);
+            int lowestEndingPoint = Math.Min(rectangle1RightX, rectangle2RightX);
 
-            if (rectangle1.LeftX >= rectangle2.LeftX)
-                highestStartingPoint = rectangle1.LeftX;
-            else if (rectangle1.LeftX < rectangle2.LeftX)
-                highestStartingPoint = rectangle2.LeftX;
-
-            if (rectangle1RightX <= rectangle2RightX)
-                lowestEndingPoint = rectangle1RightX;
-            else if (rectangle1RightX > rectangle2RightX)
-                lowestEndingPoint = rectangle2RightX;
 
 
             
