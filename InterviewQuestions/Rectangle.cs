@@ -34,7 +34,7 @@ namespace InterviewQuestions
         // of rectangle 2
         // If they do, then proceed to check what they contain with iterative process?
 
-        public int GetXOverlap(Rectangle rectangle1, Rectangle rectangle2)
+        public int[] GetXOverlap(Rectangle rectangle1, Rectangle rectangle2)
         {
             int rectangle1RightX = rectangle1.LeftX + rectangle1.Width;
             int rectangle2RightX = rectangle2.LeftX + rectangle2.Width;
@@ -42,11 +42,18 @@ namespace InterviewQuestions
             int highestStartingPoint = Math.Max(rectangle1.LeftX, rectangle2.LeftX);
             int lowestEndingPoint = Math.Min(rectangle1RightX, rectangle2RightX);
 
+            //starting point, then width of overlap
+            int[] xOverlap = { 0, 0 };
 
+            if (highestStartingPoint >= lowestEndingPoint)
+                return xOverlap;
 
-            
+            int overlapWidth = lowestEndingPoint - highestStartingPoint;
 
+            xOverlap[0] = lowestEndingPoint;
+            xOverlap[1] = overlapWidth;
 
+            return xOverlap;
         }
 
         public Rectangle GetIntersection(Rectangle rectangle1, Rectangle rectangle2)
