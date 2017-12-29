@@ -56,6 +56,29 @@ namespace InterviewQuestions
             return xOverlap;
         }
 
+        public int[] GetYOverlap(Rectangle rectangle1, Rectangle rectangle2)
+        {
+            int rectangle1TopY = rectangle1.BottomY + rectangle1.Height;
+            int rectangle2TopY = rectangle2.BottomY + rectangle2.Height;
+
+            int highestStartingPoint = Math.Max(rectangle1.LeftX, rectangle2.LeftX);
+            int lowestEndingPoint = Math.Min(rectangle1RightX, rectangle2RightX);
+
+            //starting point, then width of overlap
+            int[] xOverlap = { 0, 0 };
+
+            if (highestStartingPoint >= lowestEndingPoint)
+                return xOverlap;
+
+            int overlapWidth = lowestEndingPoint - highestStartingPoint;
+
+            xOverlap[0] = lowestEndingPoint;
+            xOverlap[1] = overlapWidth;
+
+            return xOverlap;
+        }
+
+
         public Rectangle GetIntersection(Rectangle rectangle1, Rectangle rectangle2)
         {
 
