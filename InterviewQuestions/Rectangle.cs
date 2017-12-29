@@ -61,21 +61,21 @@ namespace InterviewQuestions
             int rectangle1TopY = rectangle1.BottomY + rectangle1.Height;
             int rectangle2TopY = rectangle2.BottomY + rectangle2.Height;
 
-            int highestStartingPoint = Math.Max(rectangle1.LeftX, rectangle2.LeftX);
-            int lowestEndingPoint = Math.Min(rectangle1RightX, rectangle2RightX);
+            int highestStartingPoint = Math.Max(rectangle1.BottomY, rectangle2.BottomY);
+            int lowestEndingPoint = Math.Min(rectangle1TopY, rectangle2TopY);
 
             //starting point, then width of overlap
-            int[] xOverlap = { 0, 0 };
+            int[] yOverlap = { 0, 0 };
 
             if (highestStartingPoint >= lowestEndingPoint)
-                return xOverlap;
+                return yOverlap;
 
             int overlapWidth = lowestEndingPoint - highestStartingPoint;
 
-            xOverlap[0] = lowestEndingPoint;
-            xOverlap[1] = overlapWidth;
+            yOverlap[0] = lowestEndingPoint;
+            yOverlap[1] = overlapWidth;
 
-            return xOverlap;
+            return yOverlap;
         }
 
 
