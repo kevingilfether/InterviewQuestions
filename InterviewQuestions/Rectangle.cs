@@ -34,7 +34,7 @@ namespace InterviewQuestions
         // of rectangle 2
         // If they do, then proceed to check what they contain with iterative process?
 
-        public int[] GetXOverlap(Rectangle rectangle1, Rectangle rectangle2)
+        public static int[] GetXOverlap(Rectangle rectangle1, Rectangle rectangle2)
         {
             int rectangle1RightX = rectangle1.LeftX + rectangle1.Width;
             int rectangle2RightX = rectangle2.LeftX + rectangle2.Width;
@@ -56,7 +56,7 @@ namespace InterviewQuestions
             return xOverlap;
         }
 
-        public int[] GetYOverlap(Rectangle rectangle1, Rectangle rectangle2)
+        public static int[] GetYOverlap(Rectangle rectangle1, Rectangle rectangle2)
         {
             int rectangle1TopY = rectangle1.BottomY + rectangle1.Height;
             int rectangle2TopY = rectangle2.BottomY + rectangle2.Height;
@@ -81,8 +81,14 @@ namespace InterviewQuestions
 
         public Rectangle GetIntersection(Rectangle rectangle1, Rectangle rectangle2)
         {
+            int[] xOverlap = GetXOverlap(rectangle1, rectangle2);
+            int[] yOverlap = GetYOverlap(rectangle1, rectangle2);
+            int[] nullOverlap = new int[] { 0, 0 };
 
+            if (xOverlap == nullOverlap || yOverlap == nullOverlap)
+                return new Rectangle();
 
+            return new Rectangle(xOverlap[0], yOverlap[0], xOverlap[1], yOverlap[1]);
         }
 
     }
