@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace InterviewQuestions
 {
@@ -6,7 +7,7 @@ namespace InterviewQuestions
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            LinkedList<int> myLinkedList = new LinkedList<int>();
         }
     }
 }
