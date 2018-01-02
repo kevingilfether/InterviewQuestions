@@ -7,6 +7,8 @@ namespace InterviewQuestions
     {
         static void Main(string[] args)
         {
+
+            //Removes first duplicate from LinkedList
             int[] myNums = new int[] { 0, 2, 4, 6, 0 };
             LinkedList<int> myLinkedList = new LinkedList<int>();
 
@@ -24,10 +26,10 @@ namespace InterviewQuestions
                     listSearcher.Add(num, 1);
             }
 
-            var node = myLinkedList.First;
+            var node = myLinkedList.Last;
             while (node != null)
             {
-                var next = node.Next;
+                var next = node.Previous;
                 if (listSearcher[node.Value] > 1)
                 {
                     myLinkedList.Remove(node);
