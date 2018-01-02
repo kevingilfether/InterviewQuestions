@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace InterviewQuestions
 {
@@ -6,8 +7,7 @@ namespace InterviewQuestions
     {
         static void Main(string[] args)
         {
-            //12-29 RectangleIntersect on InterviewCake
-
+            LinkedList<int> myLinkedList = new LinkedList<int>();
         }
 
 
