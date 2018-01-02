@@ -33,7 +33,8 @@ namespace InterviewQuestions
                 if (listSearcher[node.Value] > 1)
                 {
                     myLinkedList.Remove(node);
-                    listSearcher[node.Value]--;
+                    //Uncomment next line to remove just the duplicated elements after the first instance
+                    //listSearcher[node.Value]--;
                 }
                 node = next;
             }
