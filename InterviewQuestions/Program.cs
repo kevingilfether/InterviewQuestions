@@ -13,9 +13,6 @@ namespace InterviewQuestions
             foreach (int num in myNums)
                 myLinkedList.AddLast(num);
 
-            foreach (int num in myLinkedList)
-                Console.WriteLine(num);
-
             // Writing Code to remove duplicates from LinkedList
             Dictionary<int, int> listSearcher = new Dictionary<int, int>();
 
@@ -27,14 +24,16 @@ namespace InterviewQuestions
                     listSearcher.Add(num, 1);
             }
 
-            foreach (var num in myLinkedList)
+            var node = myLinkedList.First;
+            while (node != null)
             {
-                Console.WriteLine(num);
-                //if (listSearcher[num] > 1)
-                //{
-                //    myLinkedList.Remove(num);
-                //    listSearcher[num]--;
-                //}
+                var next = node.Next;
+                if (listSearcher[node.Value] > 1)
+                {
+                    myLinkedList.Remove(node);
+                    listSearcher[node.Value]--;
+                }
+                node = next;
             }
 
             foreach (var num in myLinkedList)
